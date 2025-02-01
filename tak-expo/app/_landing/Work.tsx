@@ -35,7 +35,7 @@ const Work = () => {
   }, [activeItem]);
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto p-4">
+    <div className="w-full max-w-[1200px] mx-auto p-4 relative">
       <h2 className="text-2xl lg:text-4xl font-bold mb-8" id="projects">My Projects</h2>
 
       {/* Mobile View - Grid Layout */}
@@ -130,7 +130,32 @@ const Work = () => {
           ))}
         </ul>
       </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 transform-gpu overflow-hidden blur-3xl"
+      >
+        <div
+          style={{
+            clipPath:
+              "polygon(14.1% 24.1%, 10% 61.6%, 97.5% 26.9%, 25.5% 0.1%, 20.7% 2%, 72.5% 62.5%, 32.2% 32.4%, 22.4% 38.1%, 67.5% 58.3%, 65.2% 34.5%, 87.5% 76.7%, 0.1% 44.9%, 97.9% 100%, 87.6% 76.8%, 36.1% 97.7%, 34.1% 84.1%)",
+          }}
+          className="relative left-[calc(50%+3rem)] aspect-[1255/378] w-[59.125rem] -translate-x-1/3 bg-gradient-to-tr  from-[#5850e0] to-[#7ba35e] opacity-30 "
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-20 -z-10 transform-gpu overflow-hidden blur-3xl"
+      >
+        <div
+          style={{
+            clipPath:
+              "polygon(64.1% 54.1%, 70% 31.6%, 77.5% 26.9%, 25.5% 0.1%, 20.7% 2%, 72.5% 62.5%, 32.2% 32.4%, 22.4% 38.1%, 27.5% 58.3%, 15.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 97.9% 100%, 87.6% 76.8%, 36.1% 97.7%, 34.1% 84.1%)",
+          }}
+          className="relative left-[calc(30%+3rem)] aspect-[1055/378] w-[59.125rem] -translate-x-1/3 bg-gradient-to-tr  from-[#5850e0] to-[#7ba35e] opacity-30 "
+        />
+      </div>
     </div>
+    
   );
 };
 
