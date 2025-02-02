@@ -25,7 +25,7 @@ export const Project = [
       id: 3,
       title: "Crypto Dashboard",
       description:
-        "Project made to others, an application made to log and see its cryptocurrencies",
+        "Project made with friends, an application with log-in/ log-up made to log and see yours own cryptocurrencies",
       technologies: ["Next Js", "Express", "Node Js", "React Js", "Redux"],
       demoLink: "#",
       repoLink: "https://github.com/Retak18/CryptoDashboard-frontend.git",

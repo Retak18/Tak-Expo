@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Section from "@/app/_landing/Section";
 import React, { useEffect, useRef, useState } from "react";
 import { GithubIcon } from "./icons/GithubIcon";
@@ -11,6 +11,7 @@ const Work = () => {
   const [activeItem, setActiveItem] = useState(2);
   const wrapperRef = useRef<HTMLUListElement | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isGridView, setIsGridView] = useState(false);
 
   useEffect(() => {
     if (!wrapperRef.current) return;
@@ -36,9 +37,11 @@ const Work = () => {
 
   return (
     <div className="w-full max-w-[1200px] mx-auto p-4 relative">
-      <h2 className="text-2xl lg:text-4xl font-bold mb-8" id="projects">My Projects</h2>
+      <h2 className="text-2xl lg:text-4xl font-bold mb-8" id="projects">
+        My Projects
+      </h2>
 
-      {/* Mobile View - Grid Layout */}
+      {/*----------------------------------- Mobile View - Grid Layout ------------------------------*/}
       <div className="md:hidden grid grid-cols-1 gap-4">
         {Project.map((project) => (
           <div
@@ -56,14 +59,20 @@ const Work = () => {
             </div>
             <div className="flex flex-wrap gap-2 mt-4">
               {project.technologies.map((tech, i) => (
-                <span key={i} className="px-2 py-1 text-xs bg-background  rounded-full">
+                <span
+                  key={i}
+                  className="px-2 py-1 text-xs bg-background  rounded-full"
+                >
                   {tech}
                 </span>
               ))}
             </div>
             <div className="flex gap-2 mt-4">
               <a
-                className={cn(buttonVariants({ variant: "outline" }), "h-8 w-8 p-0")}
+                className={cn(
+                  buttonVariants({ variant: "outline" }),
+                  "h-8 w-8 p-0"
+                )}
                 href={project.repoLink}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -71,7 +80,10 @@ const Work = () => {
                 <GithubIcon size={14} className="text-foreground" />
               </a>
               <a
-                className={cn(buttonVariants({ variant: "outline" }), "h-8 w-8 p-0")}
+                className={cn(
+                  buttonVariants({ variant: "outline" }),
+                  "h-8 w-8 p-0"
+                )}
                 href={project.verceLink}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -83,12 +95,79 @@ const Work = () => {
         ))}
       </div>
 
-      {/* Desktop View - Carousel Layout */}
-      <div className="hidden md:block">
-        <ul
-          ref={wrapperRef}
-          className="group flex gap-[1.5%] h-[640px]"
+      {/*-------------------------------------- Desktop View  ------------------------------------*/}
+     
+      <div className="flex justify-end mb-8">
+        <button
+          onClick={() => setIsGridView(!isGridView)}
+          className={cn(
+            buttonVariants({ variant: "outline" }),
+            "transition-colors"
+          )}
         >
+          {isGridView ? "Carrousel View" : "Grid View"}
+        </button>
+      </div>
+
+      {/* -------------------------------------------Grid View------------------------------ */}
+      <div className={isGridView ? "block" : "hidden"}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {Project.map((project) => (
+            <div
+              key={project.id}
+              className="bg-gradient-to-tr from-green-600/30 via-sky-300/30 to-blue-600/30 p-5 rounded-xl shadow-lg"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full rounded-xl object-cover"
+              />
+              <div className="mt-4">
+                <h3 className="text-lg font-bold">{project.title}</h3>
+                <p className="text-sm mt-2">{project.description}</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {project.technologies.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-1 text-xs bg-background rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-2 mt-4">
+                <a
+                  className={cn(
+                    buttonVariants({ variant: "outline" }),
+                    "h-8 w-8 p-0"
+                  )}
+                  href={project.repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GithubIcon size={14} className="text-foreground" />
+                </a>
+                <a
+                  className={cn(
+                    buttonVariants({ variant: "outline" }),
+                    "h-8 w-8 p-0"
+                  )}
+                  href={project.verceLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <VercelIcon size={14} className="text-foreground" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ------------------------------------Carousel View--------------------------------------- */}
+      <div className={isGridView ? "hidden" : "block"}>
+        <ul ref={wrapperRef} className="group flex gap-[1.5%] h-[640px]">
           {Project.map((project, index) => (
             <li
               key={project.id}
@@ -101,29 +180,59 @@ const Work = () => {
                 [&:not(:hover),&:not(:first),&:not(:last)]:group-hover:w-[12%] hover:w-[20%]
               `}
             >
-              <div className="relative h-full w-full overflow-hidden rounded-2xl">
+             
+              <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#63c5e30f]">
+                <div className="absolute inset-0 flex flex-col justify-end p-6 rounded-xl"></div>
                 <img
-                  className="absolute left-1/2 top-1/2 h-[500px] w-[790px] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
+                  className="absolute left-1/2 top-1/2 h-[500px] w-[790px] max-w-none -translate-x-1/2 -translate-y-3/4 object-cover"
                   src={project.image}
                   alt={project.title}
                 />
-                <div className={`
-                  inset-0 opacity-25 duration-300 before:absolute before:bottom-0 before:left-[-546px] before:right-0 before:top-[-148px]
-                  before:z-10 before:bg-texture after:bottom-[28px] after:left-0 after:right-[-434px] after:top-0
-                  ${activeItem === index ? 'md:opacity-25' : 'md:opacity-0'}
-                `} />
-                <div className={`
-                  left-8 top-8 w-[590px] transition-[transform,opacity] md:absolute
-                  ${activeItem === index ? 'md:translate-x-0 md:opacity-100' : 'md:translate-x-4 md:opacity-0'}
-                `}>
-                  <h3 className="text-lg text-white">{project.title}</h3>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {project.technologies.map((tech, i) => (
-                      <span key={i} className="px-2 py-1 text-xs bg-white/20 text-white rounded-full">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                <div
+                  className={`
+                      inset-0 opacity-25 duration-300 before:absolute before:bottom-0 before:left-[-546px] before:right-0 before:top-[-148px]
+                      before:z-10 before:bg-texture after:bottom-[28px] after:left-0 after:right-[-434px] after:top-0
+                      ${activeItem === index ? "md:opacity-25" : "md:opacity-0"}
+                      `}
+                />
+                <div
+                  className={`absolute inset-0 p-6 flex flex-col justify-end`}
+                >
+                  <h3 className="text-lg text-white mx-1">{project.title}</h3>
+                  
+                  {activeItem === index && (
+                    <>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {project.technologies.map((tech, i) => (
+                          <span
+                            key={i}
+                            className="px-2 py-1 text-xs bg-white/20 text-white rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-sm mt-2">{project.description}</p>
+                      <div className="flex gap-2 mt-4">
+                        <a
+                          className={cn(buttonVariants({ variant: "outline" }), "h-8 w-8 p-0")}
+                          href={project.repoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <GithubIcon size={14} className="text-foreground" />
+                        </a>
+                        <a
+                          className={cn(buttonVariants({ variant: "outline" }), "h-8 w-8 p-0")}
+                          href={project.verceLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <VercelIcon size={14} className="text-white" />
+                        </a>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             </li>
@@ -155,7 +264,6 @@ const Work = () => {
         />
       </div>
     </div>
-    
   );
 };
 
