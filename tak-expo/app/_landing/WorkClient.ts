@@ -34,14 +34,14 @@ export const Project = [
     },
     {
       id: 4,
-      title: "Crypto Dashboard 4",
+      title: "Morning News",
       description:
-        "Project made to others, an application made to log and see its cryptocurrencies",
-      technologies: ["Next Js", "Express", "Node Js", "React Js", "Redux"],
+        "A news application where you can read the news and you can see the category of the news, also you can search for the news, make favorite and the contrary",
+      technologies: ["React Js", "Next Js", "Express", "Node Js",  "Redux"],
       demoLink: "#",
       repoLink: "#",
-      verceLink: "#",
-      image: "./CryptoDashboard.webp",
+      verceLink: "https://morning-news-frontend-phi.vercel.app/",
+      image: "./MorningNews.webp",
     },
     {
       id: 5,
