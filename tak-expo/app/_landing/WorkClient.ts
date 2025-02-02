@@ -1,15 +1,15 @@
 export const Project = [
-    {
-      id: 1,
-      title: "Crypto Dashboard 2",
-      description:
-        "Project made to others, an application made to log and see its cryptocurrencies",
-      technologies: ["Next Js", "Express", "Node Js", "React Js", "Redux"],
-      demoLink: "#",
-      repoLink: "https://github.com/Retak18/CryptoDashboard-frontend.git",
-      verceLink: "https://crypto-dashboard-frontend-wheat.vercel.app/",
-      image: "./CryptoDashboard.webp",
-    },
+    // {
+    //   id: 1,
+    //   title: "Crypto Dashboard 2",
+    //   description:
+    //     "Project made to others, an application made to log and see its cryptocurrencies",
+    //   technologies: ["Next Js", "Express", "Node Js", "React Js", "Redux"],
+    //   demoLink: "#",
+    //   repoLink: "https://github.com/Retak18/CryptoDashboard-frontend.git",
+    //   verceLink: "https://crypto-dashboard-frontend-wheat.vercel.app/",
+    //   image: "./CryptoDashboard.webp",
+    // },
     {
       id: 2,
       title: "Kasa Rent",
@@ -43,15 +43,15 @@ export const Project = [
       verceLink: "https://morning-news-frontend-phi.vercel.app/",
       image: "./MorningNews.webp",
     },
-    {
-      id: 5,
-      title: "Crypto Dashboard 5",
-      description:
-        "Project made to others, an application made to log and see its cryptocurrencies",
-      technologies: ["Next Js", "Express", "Node Js", "React Js", "Redux"],
-      demoLink: "#",
-      repoLink: "#",
-      verceLink: "#",
-      image: "./CryptoDashboard.webp",
-    },
+    // {
+    //   id: 5,
+    //   title: "Crypto Dashboard 5",
+    //   description:
+    //     "Project made to others, an application made to log and see its cryptocurrencies",
+    //   technologies: ["Next Js", "Express", "Node Js", "React Js", "Redux"],
+    //   demoLink: "#",
+    //   repoLink: "#",
+    //   verceLink: "#",
+    //   image: "./CryptoDashboard.webp",
+    // },
 ];
