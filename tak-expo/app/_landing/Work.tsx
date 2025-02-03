@@ -102,7 +102,7 @@ const Work = () => {
           onClick={() => setIsGridView(!isGridView)}
           className={cn(
             buttonVariants({ variant: "outline" }),
-            "transition-colors"
+            "transition-colors, md:hidden "
           )}
         >
           {isGridView ? "Carrousel View" : "Grid View"}
@@ -184,7 +184,7 @@ const Work = () => {
               <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#63c5e30f]">
                 <div className="absolute inset-0 flex flex-col justify-end p-6 rounded-xl"></div>
                 <img
-                  className="absolute left-1/2 top-1/2 h-[500px] w-[790px] max-w-none -translate-x-1/2 -translate-y-3/4 object-cover"
+                  className="absolute left-1/2 top-1/2 h-full w-[790px] max-w-none -translate-x-1/2 -translate-y-3/4 object-fill"
                   src={project.image}
                   alt={project.title}
                 />

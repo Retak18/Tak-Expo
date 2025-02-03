@@ -1,15 +1,15 @@
 export const Project = [
-    // {
-    //   id: 1,
-    //   title: "Crypto Dashboard 2",
-    //   description:
-    //     "Project made to others, an application made to log and see its cryptocurrencies",
-    //   technologies: ["Next Js", "Express", "Node Js", "React Js", "Redux"],
-    //   demoLink: "#",
-    //   repoLink: "https://github.com/Retak18/CryptoDashboard-frontend.git",
-    //   verceLink: "https://crypto-dashboard-frontend-wheat.vercel.app/",
-    //   image: "./CryptoDashboard.webp",
-    // },
+    {
+      id: 1,
+      title: "Tak Cook",
+      description:
+        "Where do you go for see how to cook like a chief?! On Tak Cook! you can see differents recipes of different countries, make favorites and add recipes yourself",
+      technologies: ["Mongo DB", "Express", "Node Js", "React Js", "Router","Next Js"],
+      demoLink: "#",
+      repoLink: "#",
+      verceLink: "#",
+      image: "./TakCook.webp",
+    },
     {
       id: 2,
       title: "Kasa Rent",
