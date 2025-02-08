@@ -36,7 +36,7 @@ export const Project = [
       id: 4,
       title: "Morning News",
       description:
-        "A news application where you can read the news and you can see the category of the news, also you can search for the news, make favorite and the contrary",
+        "A news application where you can read the news and you can see the category of the news, also you can search for which one you want, make favorite and the contrary",
       technologies: ["React Js", "Next Js", "Express", "Node Js",  "Redux"],
       demoLink: "#",
       repoLink: "#",

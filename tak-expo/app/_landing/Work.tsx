@@ -42,7 +42,7 @@ const Work = () => {
       </h2>
 
       {/*----------------------------------- Mobile View - Grid Layout ------------------------------*/}
-      <div className="md:hidden grid grid-cols-1 gap-4">
+      {/* <div className="md:hidden grid grid-cols-1 gap-4">
         {Project.map((project) => (
           <div
             key={project.id}
@@ -93,16 +93,16 @@ const Work = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/*-------------------------------------- Desktop View  ------------------------------------*/}
-     
-      <div className="flex justify-end mb-8">
+
+      <div className="hidden md:flex justify-end mb-8">
         <button
           onClick={() => setIsGridView(!isGridView)}
           className={cn(
             buttonVariants({ variant: "outline" }),
-            "transition-colors, md:hidden "
+            "transition-colors "
           )}
         >
           {isGridView ? "Carrousel View" : "Grid View"}
@@ -175,16 +175,15 @@ const Work = () => {
               aria-current={activeItem === index}
               className={`
                 relative md:w-[12%] md:first:w-[5%] md:last:w-[5%] md:[&[aria-current='true']]:w-[80%]
-                md:[transition:width_var(--transition,200ms_ease-in)]
+                md:[transition:width_var(--transition,400ms_ease-in-out)]
                 before:hidden md:before:block before:absolute before:bottom-0 before:left-[-10px] before:right-[-10px] before:top-0
                 [&:not(:hover),&:not(:first),&:not(:last)]:group-hover:w-[12%] hover:w-[20%]
               `}
             >
-             
               <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#63c5e30f]">
                 <div className="absolute inset-0 flex flex-col justify-end p-6 rounded-xl"></div>
                 <img
-                  className="absolute left-1/2 top-1/2 h-full w-[790px] max-w-none -translate-x-1/2 -translate-y-3/4 object-fill"
+                  className="absolute left-1/2 top-1/2 h-full w-[890px] max-w-none -translate-x-1/2 -translate-y-1/2 object-fill"
                   src={project.image}
                   alt={project.title}
                 />
@@ -196,43 +195,63 @@ const Work = () => {
                       `}
                 />
                 <div
-                  className={`absolute inset-0 p-6 flex flex-col justify-end`}
+                  className={`absolute inset-0 p-6 flex flex-col justify-end `}
                 >
-                  <h3 className="text-lg text-white mx-1">{project.title}</h3>
-                  
-                  {activeItem === index && (
-                    <>
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        {project.technologies.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="px-2 py-1 text-xs bg-white/20 text-white rounded-full"
+                  <div
+                    className={`
+                    rounded-xl 
+                      ${
+                        activeItem === index
+                          ? "bg-gradient-to-t from-black/10 via-black/50 to-black/10"
+                          : "bg-transparent"
+                      }`}
+                  >
+                    <h3 className="text-lg text-white mx-2 truncate">
+                      {project.title}
+                    </h3>
+
+                    {activeItem === index && (
+                      <>
+                        <div className="flex flex-wrap gap-2 mt-2 ml-2">
+                          {project.technologies.map((tech, i) => (
+                            <span
+                              key={i}
+                              className="px-2 py-1 text-xs bg-white/20 text-white rounded-full"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        <p className="text-sm mt-2 ml-2">
+                          {project.description}
+                        </p>
+                        <div className="flex gap-2 m-2">
+                          <a
+                            className={cn(
+                              buttonVariants({ variant: "outline" }),
+                              "h-8 w-8 p-0"
+                            )}
+                            href={project.repoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      <p className="text-sm mt-2">{project.description}</p>
-                      <div className="flex gap-2 mt-4">
-                        <a
-                          className={cn(buttonVariants({ variant: "outline" }), "h-8 w-8 p-0")}
-                          href={project.repoLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <GithubIcon size={14} className="text-foreground" />
-                        </a>
-                        <a
-                          className={cn(buttonVariants({ variant: "outline" }), "h-8 w-8 p-0")}
-                          href={project.verceLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <VercelIcon size={14} className="text-white" />
-                        </a>
-                      </div>
-                    </>
-                  )}
+                            <GithubIcon size={14} className="text-foreground" />
+                          </a>
+                          <a
+                            className={cn(
+                              buttonVariants({ variant: "outline" }),
+                              "h-8 w-8 p-0"
+                            )}
+                            href={project.verceLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <VercelIcon size={14} className="text-white" />
+                          </a>
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             </li>
