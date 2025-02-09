@@ -202,7 +202,7 @@ const Work = () => {
                     rounded-xl 
                       ${
                         activeItem === index
-                          ? "bg-gradient-to-t from-black/10 via-black/50 to-black/10"
+                          ? "bg-gradient-to-tr from-transparent via-black/50 to-transparent"
                           : "bg-transparent"
                       }`}
                   >
