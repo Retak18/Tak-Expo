@@ -43,15 +43,15 @@ export const Project = [
       verceLink: "https://morning-news-frontend-phi.vercel.app/",
       image: "./MorningNews.webp",
     },
-    // {
-    //   id: 5,
-    //   title: "Crypto Dashboard 5",
-    //   description:
-    //     "Project made to others, an application made to log and see its cryptocurrencies",
-    //   technologies: ["Next Js", "Express", "Node Js", "React Js", "Redux"],
-    //   demoLink: "#",
-    //   repoLink: "#",
-    //   verceLink: "#",
-    //   image: "./CryptoDashboard.webp",
-    // },
+    {
+      id: 5,
+      title: "Blach hole folio",
+      description:
+        "An other version of portfolio i did with 3D effect, look it! it's amazing !",
+      technologies: ["Next Js", "Three Js", "Node Js", "React Js", "Tailwind"],
+      demoLink: "#",
+      repoLink: "https://github.com/Retak18/Tak-Folio/tree/main/tak-folio",
+      verceLink: "https://tak-folio.vercel.app/",
+      image: "./Black_hole-folio.webp",
+    },
 ];
