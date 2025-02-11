@@ -43,7 +43,7 @@ const Work = () => {
       {PhoneView()}
      
 
-      {/*-------------------------------------- Desktop View  ------------------------------------*/}
+      {/*-------------------------------------- Button situation ------------------------------------*/}
 
       <div className="hidden md:flex justify-end mb-8">
         <button
