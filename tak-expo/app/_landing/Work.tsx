@@ -37,7 +37,7 @@ const Work = () => {
 
   return (
     <div className="w-full max-w-[1200px] mx-auto p-4 relative">
-      <h2 className="text-2xl lg:text-4xl font-bold mb-8" id="projects">
+      <h2 className="text-2xl lg:text-4xl font-bold mb-8   animate-slidein0 [--slidein-delay:900ms] opacity-0 " id="projects">
         My Projects
       </h2>
       {PhoneView()}

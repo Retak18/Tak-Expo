@@ -60,7 +60,23 @@ export default {
 			texture:
 				"url(/glow-texture.png), radial-gradient(var(--color-primary), transparent 70%)",
 		},
+		keyframes: {
+			slidein:{
+				from: {
+					opacity:"0",
+					transform: "translateX(100%)",
+				},
+				to: {
+					opacity: "1",
+					transform: "translateX(0)",
+				},
+			},
   	},
+	animation: {
+		slidein300: "slidein 1s ease 300ms forwards",
+		slidein0: "slidein 1s ease var(--slidein-delay, 0) forwards",
+	},
   },
+},
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

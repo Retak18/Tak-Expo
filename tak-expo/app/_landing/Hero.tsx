@@ -9,16 +9,16 @@ const Hero = () => {
           className="bg-gradient-to-tr 
              from-green-600 via-sky-300 to-blue-600 
              bg-clip-text text-transparent 
-             text-4xl lg:text-5xl font-bold lg:whitespace-nowrap z-10 "
+             text-4xl lg:text-5xl font-bold lg:whitespace-nowrap z-10 animate-slidein300 opacity-0 "
         >
           Welcome to the Tak world
         </h1>{" "}
-        <span className="text-4xl lg:text-5xl font-bold z-10">🌍 </span>
+        <span className="text-4xl lg:text-5xl font-bold z-10 animate-slidein0 [--slidein-delay:500ms] opacity-0">🌍 </span>
       </div>
-      <p className="text-lg leading-9 text-muted-foreground z-10">
-        Developer full-stack junior, in quest to always improve my code, make
-        new applications and i hope realize all yours dreams.
-        <br />I love work with team and can also work alone.
+      <p className="text-lg leading-9 text-muted-foreground z-10 animate-slidein0 [--slidein-delay:500ms] opacity-0">
+        Developer full-stack junior, in quest to always improve my code and make
+        new applications, experience in Website, Mobile and Software development.
+        <br /> 💻Love work with team and can also work alone.💻
       </p>
       <div
         aria-hidden="true"
