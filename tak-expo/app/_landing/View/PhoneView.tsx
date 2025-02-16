@@ -6,31 +6,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { Project } from "../WorkClient";
 
 const PhoneView = () => {
-     const [activeItem, setActiveItem] = useState(2);
-      const wrapperRef = useRef<HTMLUListElement | null>(null);
-      const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     
-      useEffect(() => {
-        if (!wrapperRef.current) return;
-        if (timeoutRef.current) {
-          clearTimeout(timeoutRef.current);
-        }
-    
-        wrapperRef.current.style.setProperty(
-          "--transition",
-          "600ms cubic-bezier(0.22, 0.61, 0.36, 1)"
-        );
-    
-        timeoutRef.current = setTimeout(() => {
-          wrapperRef.current?.style.removeProperty("--transition");
-        }, 900);
-    
-        return () => {
-          if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
-          }
-        };
-      }, [activeItem]);
+      
   return (
     <div className="md:hidden grid grid-cols-1 gap-4">
       {Project.map((project) => (

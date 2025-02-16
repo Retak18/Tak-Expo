@@ -21,12 +21,14 @@ const Header = () => {
           </a>
           <Link
             href="https://github.com/retak18"
+            target="_blank"
             className={cn(buttonVariants({ variant: "outline" }), "size-8 p-0")}
           >
             <GithubIcon size={14} className="text-foreground" />
           </Link>
           <Link
-            href="www.linkedin.com/in/tarek-lamarti-06b041b9"
+            href="https://www.linkedin.com/in/tarek-lamarti-06b041b9/"
+            target="_blank"
             className={cn(buttonVariants({ variant: "outline" }), "size-8 p-0")}
           >
             <LinkedIcon size={14} className="text-foreground" />

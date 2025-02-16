@@ -71,11 +71,22 @@ export default {
 					transform: "translateX(0)",
 				},
 			},
+			gradient: {
+				'0%, 100%': {
+				  'background-size': '200% 200%',
+				  'background-position': 'left center'
+				},
+				'50%': {
+				  'background-size': '200% 200%',
+				  'background-position': 'right center'
+				},
+			  },
   	},
 	animation: {
 		slidein300: "slidein 1s ease 300ms forwards",
 		slidein0: "slidein 1s ease var(--slidein-delay, 0) forwards",
-	},
+		'gradient': 'gradient 2s linear infinite',
+	}
   },
 },
   plugins: [require("tailwindcss-animate")],

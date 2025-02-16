@@ -37,11 +37,13 @@ const Work = () => {
 
   return (
     <div className="w-full max-w-[1200px] mx-auto p-4 relative">
-      <h2 className="text-2xl lg:text-4xl font-bold mb-8   animate-slidein0 [--slidein-delay:900ms] opacity-0 " id="projects">
+      <h2
+        className="text-2xl lg:text-4xl font-bold mb-8   animate-slidein0 [--slidein-delay:900ms] opacity-0 "
+        id="projects"
+      >
         My Projects
       </h2>
       {PhoneView()}
-     
 
       {/*-------------------------------------- Button situation ------------------------------------*/}
 
@@ -128,78 +130,100 @@ const Work = () => {
                 [&:not(:hover),&:not(:first),&:not(:last)]:group-hover:w-[12%] hover:w-[20%]
               `}
             >
-              <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#63c5e30f]">
-                <div className="absolute inset-0 flex flex-col justify-end p-6 rounded-xl"></div>
-                <img
-                  className="absolute left-1/2 top-1/2 h-full w-[890px] max-w-none -translate-x-1/2 -translate-y-1/2 object-fill"
-                  src={project.image}
-                  alt={project.title}
-                />
+              <div
+                className={`
+              relative h-full w-full overflow-hidden rounded-2xl 
+            ${
+              activeItem === index
+                ? "p-[4px] bg-gradient-to-r from-green-600  via-blue-600/30 to-white animate-gradient "
+                : "bg-[#63c5e30f]"
+            }
+              `}
+              >
                 <div
                   className={`
+              relative h-full w-full overflow-hidden rounded-xl
+              ${activeItem === index ? "bg-[#63c5e30f]" : ""}
+            `}
+                >
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 rounded-xl">
+                  <img
+                    className="absolute left-1/2 top-1/2 h-full w-[890px] max-w-none -translate-x-1/2 -translate-y-1/2 object-fill"
+                    src={project.image}
+                    alt={project.title}
+                  />
+                  <div
+                    className={`
                       inset-0 opacity-25 duration-300 before:absolute before:bottom-0 before:left-[-546px] before:right-0 before:top-[-148px]
                       before:z-10 before:bg-texture after:bottom-[28px] after:left-0 after:right-[-434px] after:top-0
                       ${activeItem === index ? "md:opacity-25" : "md:opacity-0"}
                       `}
-                />
-                <div
-                  className={`absolute inset-0 p-6 flex flex-col justify-end `}
-                >
+                  />
                   <div
-                    className={`
-                    rounded-xl 
+                    className={`absolute inset-0 p-3 flex flex-col justify-end
+                       `}
+                  >
+                    <div
+                      className={`
+                      rounded-xl 
                       ${
                         activeItem === index
-                          ? "bg-gradient-to-tr from-transparent via-black/50 to-transparent"
+                          ? "bg-gradient-to-tl from-transparent via-blue-600/30 to-black animate-gradient "
                           : "bg-transparent"
+                          
                       }`}
-                  >
-                    <h3 className="text-lg text-white mx-2 truncate">
-                      {project.title}
-                    </h3>
+                    >
+                      <h3 className="text-lg text-white mx-2 truncate">
+                        {project.title}
+                      </h3>
 
-                    {activeItem === index && (
-                      <>
-                        <div className="flex flex-wrap gap-2 mt-2 ml-2">
-                          {project.technologies.map((tech, i) => (
-                            <span
-                              key={i}
-                              className="px-2 py-1 text-xs bg-white/20 text-white rounded-full"
+                      {activeItem === index && (
+                        <>
+                          <div className="flex flex-wrap gap-2 mt-2 ml-2">
+                            {project.technologies.map((tech, i) => (
+                              <span
+                                key={i}
+                                className="px-2 py-1 text-xs bg-white/20 text-white rounded-full"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                          <p className="text-sm mt-2 ml-2">
+                            {project.description}
+                          </p>
+                          <div className="flex gap-2 m-2">
+                            <a
+                              className={cn(
+                                buttonVariants({ variant: "outline" }),
+                                "h-8 w-8 p-0"
+                              )}
+                              href={project.repoLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
                             >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                        <p className="text-sm mt-2 ml-2">
-                          {project.description}
-                        </p>
-                        <div className="flex gap-2 m-2">
-                          <a
-                            className={cn(
-                              buttonVariants({ variant: "outline" }),
-                              "h-8 w-8 p-0"
-                            )}
-                            href={project.repoLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <GithubIcon size={14} className="text-foreground" />
-                          </a>
-                          <a
-                            className={cn(
-                              buttonVariants({ variant: "outline" }),
-                              "h-8 w-8 p-0"
-                            )}
-                            href={project.verceLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <VercelIcon size={14} className="text-white" />
-                          </a>
-                        </div>
-                      </>
-                    )}
+                              <GithubIcon
+                                size={14}
+                                className="text-foreground"
+                              />
+                            </a>
+                            <a
+                              className={cn(
+                                buttonVariants({ variant: "outline" }),
+                                "h-8 w-8 p-0"
+                              )}
+                              href={project.verceLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <VercelIcon size={14} className="text-white" />
+                            </a>
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </div>
+                </div>
                 </div>
               </div>
             </li>
