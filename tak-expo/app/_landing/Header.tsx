@@ -17,7 +17,7 @@ const Header = () => {
         <div className="flex-1" />
         <ul className="flex items-center gap-2">
           <a href="#projects" className={cn(buttonVariants({ variant: "outline" }))}>
-            Mes projects
+            My project
           </a>
           <Link
             href="https://github.com/retak18"
