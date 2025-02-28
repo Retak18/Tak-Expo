@@ -3,7 +3,7 @@ export const Project = [
       id: 1,
       title: "Tak Cook",
       description:
-        "Where do you go for see how to cook like a chief?! On Tak Cook! you can see differents recipes of different countries, make favorites and add recipes yourself",
+        "Where do you go for see how to cook like a chief?! On Tak Cook! you can see differents recipes of different countries, make favorites and add recipes yourself. It was an application we had to make only with CSS no framework help",
       technologies: ["Mongo DB", "Express", "Node Js", "React Js", "Router","Next Js"],
       demoLink: "#",
       repoLink: "https://github.com/Retak18/Tak_Cook_0",
@@ -37,7 +37,7 @@ export const Project = [
       title: "Morning News",
       description:
         "A news application where you can read the news and you can see the category of the news, also you can search for which one you want, make favorite and the contrary",
-      technologies: ["React Js", "Next Js", "Express", "Node Js",  "Redux"],
+      technologies: ["React Js", "Next Js", "Express", "Node Js", "Nest Js", "Redux"],
       demoLink: "#",
       repoLink: "https://github.com/Retak18/morningnews",
       verceLink: "https://morning-news-frontend-phi.vercel.app/",
